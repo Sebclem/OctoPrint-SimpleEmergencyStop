@@ -14,6 +14,7 @@ or manually using this URL:
 
 - **emergencyGcode**
     Diffine the GCODE to send when the button is pressed.
+- **confirmationDialog** Show corfirmation dialog on click?
 
 ## API
 
