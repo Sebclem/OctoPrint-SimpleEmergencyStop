@@ -14,3 +14,7 @@ or manually using this URL:
 
 - **emergencyGcode**
     Diffine the GCODE to send when the button is pressed.
+
+## API
+
+Adding `plugin/simpleemergencystop` route, commande is `emergencyStop`.
