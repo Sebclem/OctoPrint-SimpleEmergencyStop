@@ -7,11 +7,31 @@
 $(function() {
     function SimpleemergencystopViewModel(parameters) {
         var self = this;
+        self.settings = undefined;
+        self.allSettings = parameters[0];
         self.loginState = parameters[1];
         self.printerState = parameters[2];
-        console.log(parameters);
+        self.confirmation = undefined;
+
+
+
+
+        self.onAfterBinding = function() {
+            self.confirmation = $("#confirmation");
+            self.settings = self.allSettings.settings.plugins.simpleemergencystop;
+        };
+
+
+
         self.click = function () {
-             $.ajax({
+            if(self.settings.confirmationDialog())
+                self.confirmation.modal("show");
+            else
+                self.sendCommand()
+
+        };
+        self.sendCommand = function () {
+            $.ajax({
                  url: API_BASEURL+"plugin/simpleemergencystop",
                  type: "POST",
                  dataType: "json",
@@ -20,10 +40,13 @@ $(function() {
                  }),
                  contentType: "application/json; charset=UTF-8",
                  success: function (data,status) {
-                     console.log(data);
+                     self.confirmation.modal("hide");
                  }
-            })
-        }
+            });
+
+        };
+
+
 
     }
 
