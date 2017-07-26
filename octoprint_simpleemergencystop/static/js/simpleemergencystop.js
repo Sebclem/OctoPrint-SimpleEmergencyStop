@@ -40,9 +40,10 @@ $(function() {
                  }),
                  contentType: "application/json; charset=UTF-8",
                  success: function (data,status) {
-                     self.confirmation.modal("hide");
+
                  }
             });
+            self.confirmation.modal("hide");
 
         };
 
