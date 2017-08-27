@@ -13,15 +13,10 @@ $(function() {
         self.printerState = parameters[2];
         self.confirmation = undefined;
 
-
-
-
         self.onAfterBinding = function() {
             self.confirmation = $("#confirmation");
             self.settings = self.allSettings.settings.plugins.simpleemergencystop;
         };
-
-
 
         self.click = function () {
             if(self.settings.confirmationDialog())
@@ -30,6 +25,7 @@ $(function() {
                 self.sendCommand()
 
         };
+
         self.sendCommand = function () {
             $.ajax({
                  url: API_BASEURL+"plugin/simpleemergencystop",
@@ -47,6 +43,9 @@ $(function() {
 
         };
 
+        self.visibleTest = function () {
+            return  self.loginState.isUser() && self.printerState.isOperational()
+        };
 
 
     }
