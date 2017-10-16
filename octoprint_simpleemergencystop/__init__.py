@@ -45,7 +45,16 @@ class SimpleemergencystopPlugin(octoprint.plugin.StartupPlugin,
 		)
 
 	def on_api_command(self, command, data):
-		self._printer.commands(self.emergencyGCODE)
+		## check if there is a : in line
+		find_this = ":"
+		if find_this in str(self.emergencyGCODE):
+
+			# if : found then, split, then for each:		
+			gcode_list = str(self.emergencyGCODE).split(':')
+			for gcode in gcode_list:
+				self._printer.commands(gcode)				
+		else:
+			self._printer.commands(self.emergencyGCODE)
 
 	def get_assets(self):
 
