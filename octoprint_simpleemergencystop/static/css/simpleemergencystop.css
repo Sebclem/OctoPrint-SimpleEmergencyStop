@@ -1,0 +1,61 @@
+.ses_small i {
+    color: red;
+}
+
+.ses_small_disabled i {
+    color: grey;
+    cursor: default;
+}
+
+.ses_small_disabled {
+    cursor: default;
+}
+
+.ses_big_disabled {
+    cursor: default;
+}
+
+.ses_big_disabled .ses_big_middle{
+    background-color: grey;
+}
+.ses_big_disabled .ses_big_middle h5 {
+    color: lightgray;
+}
+
+.ses_big_disabled .ses_big_middle i {
+    color: lightgray;
+}
+
+.ses_big_middle {
+    display: inline-block;
+    height: calc(100% - 10px);
+    margin: 4px 0 5px 0;
+    padding: 0 5px 0 5px;
+    background: red;
+    border-style: solid ;
+    border-width: 1px;
+    border-radius: 5px;
+}
+
+.ses_big_middle h5 {
+    font-size: 15px;
+    text-shadow: none;
+    font-weight: bold;
+    padding: 0 2px 0 2px;
+    margin: 0;
+    /*background-color: red;*/
+    height: 100%;
+    text-align: center;
+    line-height: 30px;
+    color: white;
+    display: inline;
+}
+
+.ses_big i {
+    /*font-size: 20px;*/
+    /*font-weight: bold;*/
+    /*display: inline;*/
+    color: yellow;
+    text-shadow: none;
+    vertical-align: middle;
+}

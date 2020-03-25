@@ -4,48 +4,71 @@
  * Author: Sebastien Clement
  * License: AGPLv3
  */
-$(function() {
+$(function () {
     function SimpleemergencystopViewModel(parameters) {
-        var self = this;
-        self.settings = undefined;
-        self.allSettings = parameters[0];
-        self.loginState = parameters[1];
-        self.printerState = parameters[2];
-        self.confirmation = undefined;
+        this.settings = undefined;
+        this.allSettings = parameters[0];
+        this.loginState = parameters[1];
+        this.printerState = parameters[2];
+        this.confirmation = undefined;
 
-        self.onAfterBinding = function() {
-            self.confirmation = $("#confirmation");
-            self.settings = self.allSettings.settings.plugins.simpleemergencystop;
+        this.onAfterBinding = function () {
+
+        };
+        this.onBeforeBinding = function () {
+            this.confirmation = $("#confirmation");
+            this.settings = this.allSettings.settings.plugins.simpleemergencystop;
         };
 
-        self.click = function () {
-            if(self.settings.confirmationDialog())
-                self.confirmation.modal("show");
+        this.click = function () {
+            if (!this.can_send_command())
+                return;
+            if (this.settings.confirmationDialog())
+                this.confirmation.modal("show");
             else
-                self.sendCommand()
+                this.sendCommand()
 
         };
 
-        self.sendCommand = function () {
+        this.sendCommand = function () {
             $.ajax({
-                 url: API_BASEURL+"plugin/simpleemergencystop",
-                 type: "POST",
-                 dataType: "json",
-                 data: JSON.stringify({
-                     command: "emergencyStop"
-                 }),
-                 contentType: "application/json; charset=UTF-8",
-                 success: function (data,status) {
+                url: API_BASEURL + "plugin/simpleemergencystop",
+                type: "POST",
+                dataType: "json",
+                data: JSON.stringify({
+                    command: "emergencyStop"
+                }),
+                contentType: "application/json; charset=UTF-8",
+                success: function (data, status) {
 
-                 }
+                }
             });
-            self.confirmation.modal("hide");
+            this.confirmation.modal("hide");
 
         };
 
-        self.visibleTest = function () {
-            return  self.loginState.isUser() && self.printerState.isOperational()
+        this.big_button_visible = function () {
+            return this.loginState.isUser() && this.settings.big_button()
         };
+
+        this.little_button_visible = function () {
+            return this.loginState.isUser() && !this.settings.big_button()
+        };
+
+        this.can_send_command = function () {
+            return this.loginState.isUser() && this.printerState.isOperational()
+        };
+
+        this.little_button_css = function () {
+            return this.printerState.isOperational() ? "ses_small" : "ses_small_disabled";
+        };
+        this.big_button_css = function () {
+            return this.printerState.isOperational() ? "ses_big" : "ses_big ses_big_disabled";
+        };
+
+        this.get_title = function () {
+            return this.printerState.isOperational() ? gettext('!!! Emergency Stop !!! ') : gettext('Printer disconnected')
+        }
 
 
     }
@@ -54,7 +77,7 @@ $(function() {
     OCTOPRINT_VIEWMODELS.push([
         SimpleemergencystopViewModel,
 
-        ["settingsViewModel","loginStateViewModel","printerStateViewModel"],
+        ["settingsViewModel", "loginStateViewModel", "printerStateViewModel"],
 
         ["#navbar_plugin_simpleemergencystop"]
     ]);
