@@ -4,7 +4,8 @@
 [![License][license-shield]](LICENSE.md)
 ![Project Maintenance][maintenance-shield]
 
-A simple plugin that add an Emergency stop button on the Octoprint NavBar
+A simple plugin that add an Emergency stop button on the Octoprint NavBar.
+You can chose between 2 type of button, the [little one](/images/small.jpeg), or [big one](/images/big.jpeg)
 
 
 ![Small Button](images/small.jpeg)
