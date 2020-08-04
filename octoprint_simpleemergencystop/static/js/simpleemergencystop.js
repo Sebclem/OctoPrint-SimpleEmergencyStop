@@ -12,9 +12,7 @@ $(function () {
         this.printerState = parameters[2];
         this.confirmation = undefined;
 
-        this.onAfterBinding = function () {
-
-        };
+        this.onAfterBinding = function () {};
         this.onBeforeBinding = function () {
             this.confirmation = $("#confirmation");
             this.settings = this.allSettings.settings.plugins.simpleemergencystop;
@@ -26,7 +24,7 @@ $(function () {
             if (this.settings.confirmationDialog())
                 this.confirmation.modal("show");
             else
-                this.sendCommand()
+                this.sendCommand();
 
         };
 
@@ -39,39 +37,37 @@ $(function () {
                     command: "emergencyStop"
                 }),
                 contentType: "application/json; charset=UTF-8",
-                success: function (data, status) {
-
-                }
+                success: function (data, status) {}
             });
             this.confirmation.modal("hide");
 
         };
 
         this.big_button_visible = function () {
-            return this.loginState.isUser() && this.settings.big_button()
+            return this.loginState.isUser() && this.settings.big_button();
         };
 
         this.little_button_visible = function () {
-            return this.loginState.isUser() && !this.settings.big_button()
+            return this.loginState.isUser() && !this.settings.big_button();
         };
 
         this.can_send_command = function () {
-            return this.loginState.isUser() && this.printerState.isOperational()
+            return this.loginState.isUser() && this.printerState.isOperational();
         };
 
         this.little_button_css = function () {
-            return this.printerState.isOperational() ? "ses_small" : "ses_small_disabled";
+            return (this.printerState.isOperational() ? "ses_small" : "ses_small_disabled");
         };
         this.big_button_css = function () {
-            return this.printerState.isOperational() ? "ses_big" : "ses_big ses_big_disabled";
+            return (this.printerState.isOperational() ? "ses_big" : "ses_big ses_big_disabled");
         };
 
         this.get_title = function () {
-            return this.printerState.isOperational() ? gettext('!!! Emergency Stop !!! ') : gettext('Printer disconnected')
-        }
+            return (this.printerState.isOperational() ? gettext('!!! Emergency Stop !!! ') : gettext('Printer disconnected'));
+        };
 
 
-    }
+    };
 
     // view model class, parameters for constructor, container to bind to
     OCTOPRINT_VIEWMODELS.push([
