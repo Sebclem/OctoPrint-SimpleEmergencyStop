@@ -43,16 +43,21 @@ $(function () {
 
         };
 
+        this.hasControlPermition = function () {
+            let user = this.loginState.currentUser()
+            return user.permissions.includes("control") || user.needs.role.includes("control");
+        }
+
         this.big_button_visible = function () {
-            return this.loginState.isUser() && this.settings.big_button();
+            return this.loginState.isUser() && this.settings.big_button() && this.hasControlPermition();
         };
 
         this.little_button_visible = function () {
-            return this.loginState.isUser() && !this.settings.big_button();
+            return this.loginState.isUser() && !this.settings.big_button() && this.hasControlPermition();
         };
 
         this.can_send_command = function () {
-            return this.loginState.isUser() && this.printerState.isOperational();
+            return this.loginState.isUser() && this.hasControlPermition() && this.printerState.isOperational() ;
         };
 
         this.little_button_css = function () {
