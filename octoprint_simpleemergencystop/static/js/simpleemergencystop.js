@@ -44,8 +44,12 @@ $(function () {
         };
 
         this.hasControlPermition = function () {
-            let user = this.loginState.currentUser()
-            return user.permissions.includes("control") || user.needs.role.includes("control");
+            let user = this.loginState.currentUser();
+            if(user.permissions !== undefined){
+                return user.permissions.includes("control") || user.needs.role.includes("control");
+            }
+            else return true;
+            
         }
 
         this.big_button_visible = function () {
