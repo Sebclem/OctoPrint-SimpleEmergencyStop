@@ -14,6 +14,18 @@ You can chose between 2 type of button, the [little one](/images/small.jpeg), or
 ![Big Button](images/big.jpeg)
 
 [![Buy me a coffee][buymeacoffee-shield]][buymeacoffee]
+
+## Permission
+To use this plugin, the user need to be logged in and have `control` permission. 
+If you don't meet the previous condition, the emergency stop button __will not show up__.
+
+> ### __Octoprint < 1.4.0:__
+>
+> If you are running __Octoprint < 1.4.0__, there is no permission check, every user can access to the emergency stop button (as soon as they are logged in).
+>
+> __This is why I highly recommend to upgrade your octoprint to > 1.4.0__
+
+
 ## Setup
 
 Install via the bundled [Plugin Manager](https://github.com/foosel/OctoPrint/wiki/Plugin:-Plugin-Manager)
