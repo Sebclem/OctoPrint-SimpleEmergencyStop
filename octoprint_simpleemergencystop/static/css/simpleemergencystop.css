@@ -2,6 +2,10 @@
     padding: 12px 0px 12px;
 }
 
+.ses_small:hover .fa-circle{
+    text-shadow: grey 1px 0px 3px ;
+}
+
 .ses_small i {
     color: red;
 }
@@ -64,6 +68,10 @@
     display: inline;
 }
 
+.ses_big_middle span{
+    font-size: 11px;
+}
+
 .ses_big i {
     /*font-size: 20px;*/
     /*font-weight: bold;*/
@@ -71,4 +79,12 @@
     color: yellow;
     text-shadow: none;
     vertical-align: middle;
+}
+
+.ses_big:hover .fa-circle{
+    text-shadow: grey 1px 0px 8px ;
+}
+
+.ses_big:hover h5{
+    text-shadow: grey 1px 0px 8px ;
 }
