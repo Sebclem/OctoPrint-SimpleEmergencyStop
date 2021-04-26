@@ -13,7 +13,8 @@ You can chose between 2 type of button, the [little one](/images/small.jpeg), or
 
 ![Big Button](images/big.jpeg)
 
-[![Buy me a coffee][buymeacoffee-shield]][buymeacoffee]
+<a href="https://www.buymeacoffee.com/seb6596"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=seb6596&button_colour=FFDD00&font_colour=000000&font_family=Lato&outline_colour=000000&coffee_colour=ffffff" width='20%'></a>
+
 
 ## Permission
 To use this plugin, the user need to be logged in and have `control` permission. 
