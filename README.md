@@ -3,6 +3,7 @@
 ![Project Stage][project-stage-shield]
 [![License][license-shield]](LICENSE.md)
 ![Project Maintenance][maintenance-shield]
+![GitHub Release][active]
 
 A simple plugin that add an Emergency stop button on the Octoprint NavBar.
 You can chose between 2 type of button, the [little one](/images/small.jpeg), or [big one](/images/big.jpeg)
@@ -60,8 +61,9 @@ The above copyright notice and this permission notice shall be included in all c
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
-[license-shield]: https://img.shields.io/github/license/Sebclem/OctoPrint-SimpleEmergencyStop.svg
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2021.svg
-[project-stage-shield]: https://img.shields.io/badge/project%20stage-Production-green.svg
-[releases-shield]: https://img.shields.io/github/release/Sebclem/OctoPrint-SimpleEmergencyStop.svg
+[license-shield]: https://img.shields.io/github/license/Sebclem/OctoPrint-SimpleEmergencyStop.svg?style=flat-square
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2021.svg?style=flat-square
+[project-stage-shield]: https://img.shields.io/badge/project%20stage-Production-green.svg?style=flat-square
+[releases-shield]: https://img.shields.io/github/release/Sebclem/OctoPrint-SimpleEmergencyStop.svg?style=flat-square
 [releases]: https://github.com/Sebclem/OctoPrint-SimpleEmergencyStop/releases
+[active]: https://img.shields.io/badge/dynamic/json?label=Active%20instances%20last%20month&query=%24.plugins.simpleemergencystop.instances&url=https%3A%2F%2Fdata.octoprint.org%2Fexport%2Fplugin_stats_30d.json&style=flat-square&color=green
