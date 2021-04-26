@@ -1,5 +1,14 @@
+.ses_small, .ses_small_disabled{
+    padding: 12px 0px 12px;
+}
+
 .ses_small i {
     color: red;
+}
+
+.ses_small span, .ses_small_disabled span {
+    padding: 5px 10px 5px;
+    font-size: 15px
 }
 
 .ses_small_disabled i {
@@ -9,6 +18,10 @@
 
 .ses_small_disabled {
     cursor: default;
+}
+
+.ses_big, .ses_big_disabled{
+    padding: 0px 5px 0px 5px
 }
 
 .ses_big_disabled {

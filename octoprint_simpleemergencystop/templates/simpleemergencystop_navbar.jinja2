@@ -1,30 +1,29 @@
-<a data-bind="click: click, css: little_button_css(), attr: { title: get_title() }, visible: little_button_visible()"
-   href="#" style="padding: 5px 5px 5px 5px">
-    <span class="fa-stack" style="font-size: 15px">
-        <i class="far fa-circle fa-stack-2x" ></i>
-        <i class="fas fa-hand-paper fa-stack-1x fa-inverse"></i>
-    </span>
-{#    <i class="" style="font-size: 22px"></i>#}
-</a>
-
-<a data-bind="click: click, css: big_button_css(), attr: { title: get_title() }, visible: big_button_visible()"
-   href="#"
-   style="padding: 0px 5px 0px 5px">
-
-    <div class="ses_big_middle">
-        <span class="fa-stack" style="font-size: 11px">
-            <i class="far fa-circle fa-stack-2x" ></i>
+<div>
+    <a data-bind="click: click, css: little_button_css(), attr: { title: get_title() }, visible: little_button_visible()"
+        href="#">
+        <span class="fa-stack">
+            <i class="far fa-circle fa-stack-2x"></i>
             <i class="fas fa-hand-paper fa-stack-1x fa-inverse"></i>
         </span>
-        <h5>{{ _('Emergency Stop') }}</h5>
-        <span class="fa-stack" style="font-size: 11px">
-            <i class="far fa-circle fa-stack-2x" ></i>
-            <i class="fas fa-hand-paper fa-stack-1x fa-inverse"></i>
-        </span>
-    </div>
+    </a>
+</div>
 
-</a>
-
+<div>
+    <a data-bind="click: click, css: big_button_css(), attr: { title: get_title() }, visible: big_button_visible()"
+        href="#">
+        <div class="ses_big_middle">
+            <span class="fa-stack" style="font-size: 11px">
+                <i class="far fa-circle fa-stack-2x"></i>
+                <i class="fas fa-hand-paper fa-stack-1x fa-inverse"></i>
+            </span>
+            <h5>{{ _("Emergency Stop") }}</h5>
+            <span class="fa-stack" style="font-size: 11px">
+                <i class="far fa-circle fa-stack-2x"></i>
+                <i class="fas fa-hand-paper fa-stack-1x fa-inverse"></i>
+            </span>
+        </div>
+    </a>
+</div>
 
 <div id="confirmation" class="modal hide fade">
     <div class="modal-header">
@@ -33,12 +32,15 @@
     </div>
     <div class="modal-body">
         <p>
-            {{ _('Are you sure you want to stop your printer?') }}
+            {{ _("Are you sure you want to stop your printer?") }}
         </p>
     </div>
     <div class="modal-footer">
-        <a href="#" class="btn" data-dismiss="modal" aria-hidden="true">{{ _('Cancel') }}</a>
-        <a href="#" class="btn btn-danger" data-bind="click: sendCommand">{{ _('Proceed') }}</a>
+        <a href="#" class="btn" data-dismiss="modal" aria-hidden="true">{{
+            _("Cancel")
+            }}</a>
+        <a href="#" class="btn btn-danger" data-bind="click: sendCommand">{{
+            _("Proceed")
+            }}</a>
     </div>
 </div>
-
