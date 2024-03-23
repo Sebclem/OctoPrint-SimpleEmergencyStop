@@ -16,7 +16,9 @@ class SimpleemergencystopPlugin(octoprint.plugin.StartupPlugin,
 		return dict(
 			emergencyGCODE="M112",
 			confirmationDialog=False,
-			big_button=False
+			big_button=False,
+			enableMargin=False,
+			marginValue=0,
 		)
 
 	def on_settings_save(self, data):

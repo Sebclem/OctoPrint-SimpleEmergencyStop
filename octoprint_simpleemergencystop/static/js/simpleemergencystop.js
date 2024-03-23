@@ -49,15 +49,33 @@ $(function () {
                 return user.permissions.includes("control") || user.needs.role.includes("control");
             }
             else return true;
-            
+
         }
 
+        this.ses_margin_css = function () {
+            if (this.settings.enableMargin()) {
+                $('#ses_wrapper').css({
+                    'margin-left':`${this.settings.marginValue()}px`,
+                    'margin-right':`${this.settings.marginValue()}px`
+                });
+            } else {
+                $('#ses_wrapper').css({
+                    'margin-left':'0px',
+                    'margin-right':'0px'
+                });
+            }
+        };
+
+        this.ses_visible = function () {
+            return this.loginState.isUser() && this.hasControlPermition();
+        };
+
         this.big_button_visible = function () {
-            return this.loginState.isUser() && this.settings.big_button() && this.hasControlPermition();
+            return this.settings.big_button();
         };
 
         this.little_button_visible = function () {
-            return this.loginState.isUser() && !this.settings.big_button() && this.hasControlPermition();
+            return !this.settings.big_button();
         };
 
         this.can_send_command = function () {
