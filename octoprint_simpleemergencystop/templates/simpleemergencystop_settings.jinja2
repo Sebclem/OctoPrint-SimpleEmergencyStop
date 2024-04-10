@@ -3,7 +3,7 @@
     <div class="control-group">
         <label class="control-label">{{ _('Emergency GCODE:') }}</label>
         <div class="controls">
-            <input type="text" class="input-block-level"
+            <input type="text" class=""
                    data-bind="value: settings.plugins.simpleemergencystop.emergencyGCODE">
         </div>
     </div>
@@ -19,6 +19,21 @@
             <input type="checkbox" data-bind="checked: settings.plugins.simpleemergencystop.big_button">
         </div>
     </div>
-
-
+    <div class="control-group">
+        <label class="control-label">{{ _('Enable margin') }}</label>
+        <div class="controls">
+            <input type="checkbox" data-bind="checked: settings.plugins.simpleemergencystop.enableMargin">
+        </div>
+    </div>
+    <div class="control-group">
+        <label class="control-label">{{ _('Margin value:') }}</label>
+        <div class="controls">
+            <div class="input-append">
+                <input type="number" class="" step="5" min="0" data-bind="
+                    value: settings.plugins.simpleemergencystop.marginValue,
+                    enable: settings.plugins.simpleemergencystop.enableMargin()">
+                <span class="add-on">px</span>
+            </div>
+        </div>
+    </div>
 </form>
