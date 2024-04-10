@@ -62,7 +62,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
 [license-shield]: https://img.shields.io/github/license/Sebclem/OctoPrint-SimpleEmergencyStop.svg?style=flat-square
-[maintenance-shield]: https://img.shields.io/maintenance/yes/2021.svg?style=flat-square
+[maintenance-shield]: https://img.shields.io/maintenance/yes/2024.svg?style=flat-square
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-Production-green.svg?style=flat-square
 [releases-shield]: https://img.shields.io/github/release/Sebclem/OctoPrint-SimpleEmergencyStop.svg?style=flat-square
 [releases]: https://github.com/Sebclem/OctoPrint-SimpleEmergencyStop/releases
