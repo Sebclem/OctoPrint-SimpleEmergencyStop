@@ -60,7 +60,7 @@ class SimpleemergencystopPlugin(octoprint.plugin.StartupPlugin,
 
 		return dict(
 			js=["js/simpleemergencystop.js"],
-			css=["css/simpleemergencystop.css", "css/fontawesome.all.min.css"]
+			css=["css/simpleemergencystop.css"]
 		)
 
 	# Softwareupdate hook
