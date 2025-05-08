@@ -2,6 +2,8 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
 
 import octoprint.plugin
+import flask
+from octoprint.access.permissions import Permissions
 
 
 class SimpleemergencystopPlugin(octoprint.plugin.StartupPlugin,
@@ -40,6 +42,9 @@ class SimpleemergencystopPlugin(octoprint.plugin.StartupPlugin,
 		)
 
 	def on_api_command(self, command, data):
+		if not Permissions.CONTROL.can():
+			return flask.make_response("Insufficient rights", 403)
+
 		# check if there is a : in line
 		find_this = ":"
 		if find_this in str(self.emergencyGCODE):
